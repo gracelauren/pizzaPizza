@@ -5,6 +5,7 @@
 <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
@@ -16,13 +17,14 @@
 
 </head>
   <body>
+  <div class="container">
   <div class="middle">
     <h2>Welcome to Pizza Pizza may I take your order?</h2>
     <div class="row">
         <form id="pizzaType">
           <div class="form-group styleMe">
-              <select id="pizzaSize">
-              <option value=""> - Select - </option>
+            <div class="center">
+            <select id="pizzaSize">
               <option value="Personal">Personal</option>
               <option  value="X-Small">X-Small</option>
               <option value="Small">Small</option>
@@ -30,6 +32,7 @@
               <option value="Large">Large</option>
               <option value="X-Large">X-Large</option>
             </select>
+            </div>
           </div>
           <div class="form-group styleMe">
             <label class="input">
@@ -39,12 +42,13 @@
           </div>
           <button type="submit" class="btn">Order My Pizza</button>
         </form>
-      </div>
+    </div>
     <div class="row">
       <div id="order">
         <h5>You ordered a <span class="customerOrder"></span> pizza. Which will have <span class="slicesInOrder"></span> pieces.</h5>
       </div>
     </div>
+  </div>
   </div>
   </body>
 </html>

@@ -28,6 +28,8 @@
 
   body {
   background-color: #fff;
+  font-family: 'Amatic SC', cursive;
+
   }
 
   .middle {
@@ -58,11 +60,19 @@
   font-weight: normal;
   text-align: center; }
 
-  p {
-  color: #000;
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
-  font-weight: normal;}
+  .center {
+    padding-top: 60px;
+
+  }
+
+
+  #pizzaSize,
+  p  {
+    color: #000;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    font-weight: normal;}
+
 
   ul li {
   margin-left: 10px;
@@ -77,7 +87,7 @@
 
   .styleMe {
   float: left;
-  width: 100%;
+  width: 30%;
   margin: 0 0 50px 0; }
   .styleMe label.input {
   float: left;
@@ -156,12 +166,63 @@
   .styleMe span.fixed span {
   top: -35px; }
 
+#styleMe-radio {
+float: left;
+width: 100%;
+margin: 0 0 30px 0; }
+#styleMe-radio label.radio {
+float: left;
+width: auto;
+line-height: 30px;
+margin: 0 0 10px 0;
+color: #fff;
+font-family: 'Indie Flower', cursive;
+font-size: 22px;
+cursor: pointer;
+position: relative;
+clear: both;
+transition: 0.3s;
+-webkit-transition: 0.3s;
+-moz-transition: 0.3s; }
+#styleMe-radio label.radio:before {
+content: '';
+float: left;
+width: 29px;
+height: 29px;
+margin: 0 5px 0 0;
+background-color: #fff;
+border-radius: 100%;
+font-size: 22px;
+text-indent: 40px; }
+#styleMe-radio label.radio:after {
+content: '';
+width: 5px;
+height: 5px;
+background-color: #2C3E50;
+border-radius: 100%;
+position: absolute;
+top: 12px;
+left: 12px;
+opacity: 0;
+transition: 0.2s;
+-webkit-transition: 0.2s;
+-moz-transition: 0.2s; }
+#styleMe-radio label.radio.selected:after {
+width: 15.5px;
+height: 15.5px;
+top: 7px;
+left: 7px;
+opacity: 1; }
+#styleMe-radio label.radio:hover {
+text-indent: 5px; }
+
+
   .btn {
   float: left;
   width: 40%;
   height: 50px;
   line-height: 50px;
-  margin: 0 0 50px 0;
+  margin: 50px 0 0 0;
   background-color: #56F9CB;
   color: #fff;
   cursor: default;
@@ -175,29 +236,3 @@
   -moz-transition: 0.3s; }
   .btn:hover {
   background-color: #56F9A2; }
-
-  /*notebook*/
-
-body {background: rgb(225, 228, 232)}
-.page-inner {
-position: absolute;
-top: 30px; bottom: 20px;
-left: 15px; right: 15px;
-outline: none;
-overflow-y: scroll;
-
-background: linear-gradient(
-to bottom,
-transparent,
-transparent 19px,
-rgba(0,0,0,.2),
-rgba(0,0,0,.2) 1px
-);
-background-size: 100% 20px;
-box-shadow:
-0 -1px 0 rgba(0,0,0,0.2),
-0 -5px 0 rgb(247, 246, 212),
-0 -6px 0 rgba(0,0,0,0.4);
-
-}
-.page-inner > div {text-align: left !important}
