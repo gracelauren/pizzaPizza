@@ -41,9 +41,7 @@ $(function() {
     var customerPizzaSize = $( "#pizzaSize" ).val();
     // var customerToppings = $("#toppings").val();
 
-    $("input:radio[name=toppings]").click(function() {
-      var customerToppings = $(this).val();
-    });
+     var customerToppings = $('input[name="toppings"]:checked', '#pizzaType').val();
 
     var pizzaOrderSlices =  pizzaSlices(customerPizzaSize);
     var pizzaOrder =  customerPizzaSize +  " "  + customerToppings;

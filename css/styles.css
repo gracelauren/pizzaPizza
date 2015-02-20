@@ -20,6 +20,10 @@
   background-color: #ADD8E6;
   }
 
+  .row{
+    margin-left: 40%
+  }
+
 
   * {
   margin: 0;
@@ -219,10 +223,10 @@ text-indent: 5px; }
 
   .btn {
   float: left;
-  width: 40%;
+  width: 37%;
   height: 50px;
   line-height: 50px;
-  margin: 50px 0 0 0;
+  margin: 20px 0 0 0;
   background-color: #e32636;
   color: #fff;
   cursor: default;
