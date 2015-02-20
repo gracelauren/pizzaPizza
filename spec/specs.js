@@ -1,7 +1,7 @@
 describe("pizzaPizza", function() {
 
-  it("", function() {
-    expect(pizzaPizza("")).to.equal("");
+  it("A twelve inch pizza has 8 pieces", function() {
+    expect(pizzaPizza("12")).to.equal("8");
   });
 
 });
