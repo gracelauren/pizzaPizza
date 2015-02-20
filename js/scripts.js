@@ -1,9 +1,10 @@
-var pizzaPizza = function(sizeInInches) {
-  var sizeInInches = parseInt(sizeInInches);
+var pizzaPizza = function(pizzaSize) {
   var result = "";
 
-  if (sizeInInches === 12) {
-    result = "8";
+  if (pizzaSize === "Personal") {
+    result = "4";
+  } else if (pizzaSize === "X-Small" || pizzaSize === "Small"  ) {
+    result = "6";
   }
   return result;
 };
