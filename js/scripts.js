@@ -1,15 +1,15 @@
-var pizzaSlices = function(pizzaSize) {
+var pizzaSlices = function(pizzaSize, pizzaTopping) {
   var result = "";
 
-  if (pizzaSize === "Personal") {
+  if (pizzaSize === "Personal" && pizzaTopping !== "Pepperoni")  {
     result = "4";
-  } else if (pizzaSize === "X-Small" || pizzaSize === "Small"  ) {
+  } else if (pizzaSize === "X-Small" || pizzaSize === "Small" || pizzaTopping === "Pepperoni") {
     result = "6";
-  } else if (pizzaSize === "Medium" ) {
+  } else if (pizzaSize === "Medium" && pizzaTopping !== "Pepperoni") {
     result = "8";
-  } else if (pizzaSize === "Large" ) {
+  } else if (pizzaSize === "Large" && pizzaTopping !== "Pepperoni") {
     result = "10";
-  } else {
+  } else if (pizzaSize === "X-Large" && pizzaTopping !== "Pepperoni") {
     result = "12";
   }
   return result;
@@ -41,16 +41,16 @@ $(function() {
     var customerPizzaSize = $( "#pizzaSize" ).val();
     // var customerToppings = $("#toppings").val();
 
-     var customerToppings = $('input[name="toppings"]:checked', '#pizzaType').val();
-
-    var pizzaOrderSlices =  pizzaSlices(customerPizzaSize);
+    var customerToppings = $('input[name="toppings"]:checked', '#pizzaType').val();
+    var pizzaOrderSlices =  pizzaSlices(customerPizzaSize, customerToppings);
     var pizzaOrder =  customerPizzaSize +  " "  + customerToppings;
     $(".customerOrder").text(pizzaOrder);
     $(".slicesInOrder").text(pizzaOrderSlices);
 
     $("#order").show();
 
-    $("form")[0].reset();
+    // $("form")[0].reset();
+    // $("input:radio").attr("checked", false);
   });
 });
 
