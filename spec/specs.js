@@ -20,7 +20,7 @@ describe("pizzaPizza", function() {
     expect(pizzaPizza("Large")).to.equal("10");
   });
 
-  it("A x-large 16 inche pizza has 12 pieces", function() {
+  it("A x-large 16 inch pizza has 12 pieces", function() {
     expect(pizzaPizza("X-Large")).to.equal("12");
   });
 
