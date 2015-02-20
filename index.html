@@ -21,8 +21,8 @@
     <div class="row">
         <form id="pizzaType">
           <div class="form-group styleMe">
-            <label class="input">
               <select id="pizzaSize">
+              <option value=""> - Select - </option>
               <option value="Personal">Personal</option>
               <option  value="X-Small">X-Small</option>
               <option value="Small">Small</option>
@@ -30,11 +30,10 @@
               <option value="Large">Large</option>
               <option value="X-Large">X-Large</option>
             </select>
-            </label>
           </div>
           <div class="form-group styleMe">
             <label class="input">
-              <input id="toppings" type="text">
+              <input id="toppings" type="text" required>
               <span><span>Cheese or Pepperonni?</span></span>
             </label>
           </div>

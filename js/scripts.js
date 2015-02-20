@@ -28,10 +28,10 @@ $(function() {
   $("#pizzaType").submit(function(event) {
     event.preventDefault();
 
-    var customerPizzaSize = $("pizzaSize").val();
-    var customerToppings = $("toppings").val();
+    var customerPizzaSize = $( "#pizzaSize" ).val();
+    var customerToppings = $("#toppings").val();
     var pizzaOrderSlices =  pizzaSlices(customerPizzaSize);
-    var pizzaOrder =  customerPizzaSize.toString() +  " "  + customerToppings.toString();
+    var pizzaOrder =  customerPizzaSize +  " "  + customerToppings;
     $(".customerOrder").text(pizzaOrder);
     $(".slicesInOrder").text(pizzaOrderSlices);
 
