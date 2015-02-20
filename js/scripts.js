@@ -25,11 +25,26 @@ $(function() {
     }
   });
 
+  $(".styleMe-radio input[type=radio]").click(function() {
+  $('label.radio').removeClass('selected');
+  var inputID = $(this).attr('id');
+  if ($(this).is(':checked')) {
+    $('.' + inputID).addClass('selected');
+  } else {
+    $('.' + inputID).removeClass('selected');
+  }
+});
+
   $("#pizzaType").submit(function(event) {
     event.preventDefault();
 
     var customerPizzaSize = $( "#pizzaSize" ).val();
-    var customerToppings = $("#toppings").val();
+    // var customerToppings = $("#toppings").val();
+
+    $("input:radio[name=toppings]").click(function() {
+      var customerToppings = $(this).val();
+    });
+
     var pizzaOrderSlices =  pizzaSlices(customerPizzaSize);
     var pizzaOrder =  customerPizzaSize +  " "  + customerToppings;
     $(".customerOrder").text(pizzaOrder);
