@@ -20,13 +20,19 @@
     <h2>Welcome to Pizza Pizza may I take your order?</h2>
     <div class="row">
         <form id="pizzaType">
-          <div class="form-group" id="styleMe">
+          <div class="form-group styleMe">
             <label class="input">
-              <input id="pizzaSize" type="number">
-              <span><span>Size (In.)</span></span>
+              <select id="pizzaSize">
+              <option value="Personal">Personal</option>
+              <option  value="X-Small">X-Small</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="X-Large">X-Large</option>
+            </select>
             </label>
           </div>
-          <div class="form-group" id="styleMe">
+          <div class="form-group styleMe">
             <label class="input">
               <input id="toppings" type="text">
               <span><span>Cheese or Pepperonni?</span></span>
@@ -36,8 +42,8 @@
         </form>
       </div>
     <div class="row">
-      <div id="result">
-        <h5>You ordered a <span class="customerOrder"></span> pizza. Which will have <span class="pizzaSlices"></span> pieces.</h5>
+      <div id="order">
+        <h5>You ordered a <span class="customerOrder"></span> pizza. Which will have <span class="slicesInOrder"></span> pieces.</h5>
       </div>
     </div>
   </div>

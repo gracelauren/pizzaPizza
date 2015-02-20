@@ -1,4 +1,4 @@
-var pizzaPizza = function(pizzaSize) {
+var pizzaSlices = function(pizzaSize) {
   var result = "";
 
   if (pizzaSize === "Personal") {
@@ -14,3 +14,32 @@ var pizzaPizza = function(pizzaSize) {
   }
   return result;
 };
+
+
+$(function() {
+  $('.styleMe [type="text"]').blur(function(){
+    if($(this).val().length > 0){
+      $(this).next().children().css('color', "transparent");
+    } else {
+      $(this).next().children().css('color', "#000");
+    }
+  });
+
+  $("#pizzaType").submit(function(event) {
+    event.preventDefault();
+
+    var customerPizzaSize = $("pizzaSize").val();
+    var customerToppings = $("toppings").val();
+    var pizzaOrderSlices =  pizzaSlices(customerPizzaSize);
+    var pizzaOrder =  customerPizzaSize.toString() +  " "  + customerToppings.toString();
+    $(".customerOrder").text(pizzaOrder);
+    $(".slicesInOrder").text(pizzaOrderSlices);
+
+    $("#order").show();
+
+    $("form")[0].reset();
+  });
+});
+
+
+// add and remove class for toppings display svg pizza size
