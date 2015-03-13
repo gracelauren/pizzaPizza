@@ -1,18 +1,31 @@
-var pizzaSlices = function(pizzaSize, pizzaTopping) {
-  var result = "";
+var Pizza = {
+  topping: "",
+  diameter: "",
 
-  if (pizzaSize === "Personal" && pizzaTopping !== "Pepperoni")  {
-    result = "4";
-  } else if (pizzaSize === "X-Small" || pizzaSize === "Small" || pizzaTopping === "Pepperoni") {
-    result = "6";
-  } else if (pizzaSize === "Medium" && pizzaTopping !== "Pepperoni") {
-    result = "8";
-  } else if (pizzaSize === "Large" && pizzaTopping !== "Pepperoni") {
-    result = "10";
-  } else if (pizzaSize === "X-Large" && pizzaTopping !== "Pepperoni") {
-    result = "12";
+  init: function() {
+    topping: "";
+    diameter: "";
+  },
+
+   pizzaSlices: function() {
+    var pizzaSize = this.diameter;
+    var pizzaTopping = this.topping;
+    var result = "";
+
+    if (pizzaSize === "Personal" && pizzaTopping !== "Pepperoni")  {
+      result = "4";
+    } else if (pizzaSize === "X-Small" || pizzaSize === "Small" || pizzaTopping === "Pepperoni") {
+      result = "6";
+    } else if (pizzaSize === "Medium" && pizzaTopping !== "Pepperoni") {
+      result = "8";
+    } else if (pizzaSize === "Large" && pizzaTopping !== "Pepperoni") {
+      result = "10";
+    } else if (pizzaSize === "X-Large" && pizzaTopping !== "Pepperoni") {
+      result = "12";
+    }
+    return result;
   }
-  return result;
+
 };
 
 
@@ -27,22 +40,26 @@ $(function() {
 
   $(".styleMe-radio input[type=radio]").click(function() {
   $('label.radio').removeClass('selected');
-  var inputID = $(this).attr('id');
-  if ($(this).is(':checked')) {
-    $('.' + inputID).addClass('selected');
-  } else {
-    $('.' + inputID).removeClass('selected');
-  }
-});
+    var inputID = $(this).attr('id');
+    if ($(this).is(':checked')) {
+      $('.' + inputID).addClass('selected');
+    } else {
+      $('.' + inputID).removeClass('selected');
+    }
+  });
+
 
   $("#pizzaType").submit(function(event) {
     event.preventDefault();
+    var newPizza = Object.create(Pizza);
+    newPizza.init();
 
     var customerPizzaSize = $( "#pizzaSize" ).val();
-    // var customerToppings = $("#toppings").val();
-
+    newPizza.diameter = customerPizzaSize;
     var customerToppings = $('input[name="toppings"]:checked', '#pizzaType').val();
-    var pizzaOrderSlices =  pizzaSlices(customerPizzaSize, customerToppings);
+    newPizza.topping = customerToppings;
+
+    var pizzaOrderSlices =  newPizza.pizzaSlices();
     var pizzaOrder =  customerPizzaSize +  " "  + customerToppings;
     $(".customerOrder").text(pizzaOrder);
     $(".slicesInOrder").text(pizzaOrderSlices);
